@@ -1,0 +1,26 @@
+# Default configuration for CAFormer-S24 training
+model:
+  num_classes: 7
+  in_channels: 3
+  stem_channels: [32, 64, 128]
+  attention_dims: [192, 256, 320]
+  attention_heads: [3, 4, 5]
+  attention_depths: [2, 4, 4]
+  patch_sizes: [2, 2, 2]
+  dropout: 0.1
+  mlp_ratio: 4.0
+
+optimizer:
+  lr: 0.0003
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+
+scheduler:
+  type: cosine
+  t_max: 100
+
+training:
+  epochs: 100
+  batch_size: 32
+  image_size: 224
+  workers: 4
